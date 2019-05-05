@@ -15,7 +15,7 @@
     "typescript": "^3.4.5"
   },
   "scripts": {
-    "start": "tsc & node dist/server.js",
-    "watch-server": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/server.ts"
+    "start": "tsc & node dist/app.js",
+    "watch-server": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/app.ts"
   }
 }
