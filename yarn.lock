@@ -91,6 +91,13 @@
   dependencies:
     "@types/koa" "*"
 
+"@types/koa2-cors@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.npm.taobao.org/@types/koa2-cors/download/@types/koa2-cors-2.0.1.tgz#76a635cadc9c10e9d29a209fa2db28529dfc765a"
+  integrity sha1-dqY1ytycEOnSmiCfotsoUp38dlo=
+  dependencies:
+    "@types/koa" "*"
+
 "@types/koa@*", "@types/koa@^2.0.48":
   version "2.0.48"
   resolved "https://registry.npm.taobao.org/@types/koa/download/@types/koa-2.0.48.tgz#29162783029d3e5df8b58c55f6bf0d35f78fc39f"
@@ -1362,6 +1369,11 @@ koa-router@^7.4.0:
     methods "^1.0.1"
     path-to-regexp "^1.1.1"
     urijs "^1.19.0"
+
+koa2-cors@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.npm.taobao.org/koa2-cors/download/koa2-cors-2.0.6.tgz#9ad23df3a0b9bb84530b46f5944f3fb576086554"
+  integrity sha1-mtI986C5u4RTC0b1lE8/tXYIZVQ=
 
 koa@^2.7.0:
   version "2.7.0"

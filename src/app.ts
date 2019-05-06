@@ -1,10 +1,14 @@
 import * as Koa from 'koa'
-import { createConnection, Connection } from 'typeorm'
+import * as cors from 'koa2-cors'
+import { createConnection } from 'typeorm'
 import { router } from './router'
 
 const port: number = 3000
 
-const koa = new Koa().use(router.routes()).listen(port)
+const koa = new Koa()
+    .use(cors()) // 跨域, 保证在 router 之前
+    .use(router.routes())
+    .listen(port)
 console.log(`Server running on port ${port}`)
 
 // db init
@@ -18,5 +22,5 @@ createConnection({
     entities: [
         __dirname + '/model/**/*.ts'
     ]
-}).then(Connection => {
+}).then(connection => {
 }).catch(error => console.log(error))

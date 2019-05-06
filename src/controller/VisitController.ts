@@ -10,6 +10,7 @@ export class VisitController {
     static async select(ctx: Koa.ParameterizedContext<{}>): Promise<any> {
         await new VisitService().select().then( value => {
             ctx.body = value
+            // ctx.set('Access-Control-Allow-Origin', '*')
             ctx.response.type = 'json'
         })
     }
