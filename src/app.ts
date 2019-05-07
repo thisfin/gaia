@@ -19,6 +19,7 @@ createConnection({
     username: 'wenyou',
     password: '1234',
     database: 'app',
+    timezone: 'Z', // 注意时区的问题
     entities: [
         __dirname + '/model/**/*.ts'
     ]

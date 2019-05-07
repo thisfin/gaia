@@ -22,10 +22,14 @@ export class VisitService {
         // }).catch(error => console.log(error))
     }
 
-    select(): Promise<AppVisit[]> {
+    select(os?: string, date?: Date): Promise<AppVisit[]> {
         return getConnection().manager.find(AppVisit, {
+            where: {
+                'os': os
+            },
             order: {
-                "gmtCreate": "DESC"
+                'gmt': 'ASC',
+                'version': 'DESC'
             }
         })
     }
