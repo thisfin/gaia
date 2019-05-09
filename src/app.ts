@@ -2,11 +2,13 @@ import * as Koa from 'koa'
 import * as cors from 'koa2-cors'
 import { createConnection } from 'typeorm'
 import { router } from './router'
+import * as bodyParser from 'koa-bodyparser'
 
 const port: number = 3000
 
 const koa = new Koa()
     .use(cors()) // 跨域, 保证在 router 之前
+    .use(bodyParser())
     .use(router.routes())
     .listen(port)
 console.log(`Server running on port ${port}`)

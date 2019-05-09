@@ -19,6 +19,7 @@ export class AppVisit {
     @Column({nullable: true})
     percent: number
 }
+
 /*
 CREATE TABLE `app_visit` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
