@@ -10,7 +10,7 @@ export class VisitService {
         return getConnection().manager.save(model)
     }
 
-    select(os?: string, date?: Date): Promise<AppVisit[]> {
+    select1(os?: string, date?: Date): Promise<AppVisit[]> {
         return getConnection().manager.find(AppVisit, {
             where: {
                 'os': os
@@ -20,5 +20,18 @@ export class VisitService {
                 'version': 'DESC'
             }
         })
+    }
+
+    select(os?: string, date?: Date): Promise<AppVisit[]> {
+        const day = new Date()
+        day.setTime(day.getTime() - 1000 * 60 * 60 * 24 * 8)
+
+        return getConnection().manager.getRepository(AppVisit)
+            .createQueryBuilder()
+            .where('os = :os', { os: os })
+            .andWhere('gmt >= :gmt', { gmt: day })
+            .orderBy('gmt', 'ASC')
+            .addOrderBy('version', 'DESC')
+            .getMany()
     }
 }
