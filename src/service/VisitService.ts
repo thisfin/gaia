@@ -24,7 +24,7 @@ export class VisitService {
 
     select(os?: string, date?: Date): Promise<AppVisit[]> {
         const day = new Date()
-        day.setTime(day.getTime() - 1000 * 60 * 60 * 24 * 8)
+        day.setTime(day.getTime() - 1000 * 60 * 60 * 24 * 16)
 
         return getConnection().manager.getRepository(AppVisit)
             .createQueryBuilder()
